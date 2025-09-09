@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: #DCE4D0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+    padding-inline: 256px;
+    background-color: #397358;
+    color: #C3E3AB;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#goTop {
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    padding-inline: 256px;
+    padding-top: 96px;
+}
+
+.main-title {
+    color: #397358;
+    margin-top: 80px;
+}
+
+.subtitle {
+    color: #397358;
+    margin-top: 4px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border: 3px solid #397358;
+    color: #397358;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 200ms ease,
+    border-color 160ms ease;
+}
+
+.info-row.active {
+  border-radius: 12px 12px 0 0;
+}
+
+.info-row:hover {
+  background-color: #DCE4D0;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.info-row:active {
+  transform: translateY(1px);
+}
+
+.info-details {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  border-inline: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 0 0 12px 12px;
+  color: #397358;
+  transition:
+    max-height 260ms ease,
+    opacity 220ms ease,
+    padding 220ms ease,
+    border-color 220ms ease;
+}
+
+.info-row.active + .info-details {
+  max-height: 320px;
+  opacity: 1;
+  padding: 14px 18px;
+  border-inline-color: #397358;
+  border-bottom-color: #397358;
+}
+
+.icon {
+  color: #397358;
+  transition: transform 200ms ease;
+  transform-origin: center;
+}
+
+.info-row.active .icon {
+  transform: rotate(180deg);
+}
